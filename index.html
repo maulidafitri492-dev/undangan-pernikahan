@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Wedding Invitation</title>
+<title>Wedding Invitation | Sadamia & Nawarsidin</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -15,665 +15,624 @@
   box-sizing: border-box;
 }
 
-:root {
-  --gold: #b49360;
-  --cream: #f8f2e9;
-  --brown: #514236;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
-  color: var(--brown);
-  background: var(--cream);
-  overflow: hidden;
+  background: #171510;
+  color: #f8edda;
+  overflow-x: hidden;
 }
 
-.slider {
+:root {
+  --gold: #d8b878;
+  --cream: #f7ecd9;
+  --dark: #211c16;
+}
+
+.invitation {
+  width: min(100%, 850px);
+  min-height: 100vh;
+  margin: auto;
+  background: var(--dark);
+  border-left: 1px solid rgba(216,184,120,.3);
+  border-right: 1px solid rgba(216,184,120,.3);
   position: relative;
-  height: 100dvh;
-  width: 100%;
   overflow: hidden;
 }
 
-.slide {
-  position: absolute;
-  inset: 0;
-  padding: 35px 20px 95px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+section {
+  padding: 75px 22px;
   text-align: center;
-  overflow-y: auto;
-  background:
-    linear-gradient(#f8f2e9e8,#f8f2e9ed),
-    url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600') center/cover;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(50px);
-  transition: opacity .8s ease, transform .8s ease, visibility .8s;
+  position: relative;
 }
 
-.slide.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
-  z-index: 2;
+.ornament {
+  color: var(--gold);
+  font-size: 22px;
+  letter-spacing: 8px;
+  margin: 15px 0;
 }
 
 .small-title {
+  font-size: 11px;
+  letter-spacing: 5px;
   color: var(--gold);
-  letter-spacing: 4px;
-  font-size: 10px;
   text-transform: uppercase;
-  margin-bottom: 15px;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
 }
 
 .script {
   font-family: 'Great Vibes', cursive;
   color: var(--gold);
-  font-size: clamp(43px, 9vw, 75px);
-  font-weight: 400;
-  line-height: 1.25;
 }
 
-.heading {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(30px, 7vw, 52px);
-  font-weight: 500;
-}
-
-.names {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(43px, 9vw, 70px);
-  color: var(--gold);
-  margin: 12px 0;
-}
-
-.description {
-  max-width: 520px;
-  font-size: 12px;
-  line-height: 2;
-  color: #776b60;
-  margin: 13px auto;
-}
-
-.line {
-  height: 1px;
-  width: 65px;
-  background: var(--gold);
-  margin: 17px auto;
-}
-
-.photo-main {
-  width: min(70vw, 260px);
-  height: 290px;
-  object-fit: cover;
-  border: 6px solid white;
-  border-radius: 140px 140px 5px 5px;
-  box-shadow: 0 8px 30px #0002;
-  margin: 12px 0;
-}
-
-.photo-wide {
-  width: min(85vw, 420px);
-  height: 290px;
-  object-fit: cover;
-  border: 6px solid white;
-  box-shadow: 0 8px 30px #0002;
-  margin: 15px 0;
-}
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 155px));
-  gap: 12px;
-  margin: 20px auto;
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(rgba(20,17,12,.65),rgba(20,17,12,.88)),
+    url('foto%20-%201.jpeg') center/cover;
+  padding: 45px 20px;
 }
 
-.photo-grid img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border: 5px solid white;
-  box-shadow: 0 5px 18px #0002;
+.cover .small-title {
+  margin-bottom: 25px;
 }
 
-.photo-grid img:nth-child(7) {
-  grid-column: span 2;
-  width: 155px;
-  justify-self: center;
+.cover h1 {
+  font-size: clamp(35px, 8vw, 65px);
+  line-height: 1.35;
+  color: var(--cream);
 }
 
-.btn {
-  display: inline-block;
-  background: var(--gold);
-  color: white;
-  border: 1px solid var(--gold);
-  padding: 12px 27px;
-  border-radius: 30px;
-  font-family: inherit;
+.cover .and {
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold);
+  font-size: 45px;
+  margin: 5px;
+}
+
+.cover .date {
+  margin-top: 30px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.cover .guest {
+  margin-top: 35px;
   font-size: 12px;
-  text-decoration: none;
+  color: #e9dcc7;
+}
+
+.open-btn {
+  margin-top: 25px;
+  padding: 13px 30px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold);
+  border-radius: 30px;
+  letter-spacing: 2px;
   cursor: pointer;
-  margin: 8px;
   transition: .3s;
 }
 
-.btn:hover {
-  background: transparent;
-  color: var(--gold);
+.open-btn:hover {
+  background: var(--gold);
+  color: var(--dark);
 }
 
-.btn-outline {
-  background: transparent;
-  color: var(--gold);
+.intro {
+  background: #282219;
 }
 
-.details {
-  width: min(100%, 380px);
-  background: #fff9f0c9;
-  border: 1px solid #d4bc96;
-  padding: 20px;
-  margin: 10px auto;
+.intro h2 {
+  font-size: 32px;
+  color: var(--cream);
+  margin: 15px 0;
 }
 
-.details h3 {
-  font-family: 'Cormorant Garamond', serif;
-  color: var(--gold);
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-.details p {
-  font-size: 12px;
+.intro p, .closing p {
+  font-size: 13px;
   line-height: 2;
+  color: #d8cbb6;
+  max-width: 550px;
+  margin: auto;
 }
 
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 9px;
-  margin: 22px 0;
+.couple {
+  background: #211c16;
 }
 
-.countdown div {
-  background: white;
-  padding: 13px 9px;
-  min-width: 63px;
-  box-shadow: 0 4px 15px #0001;
+.couple h2 {
+  font-size: 38px;
+  margin: 20px 0;
 }
 
-.countdown strong {
-  display: block;
-  font-size: 23px;
+.couple-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 45px;
   color: var(--gold);
+  margin: 15px 0;
 }
 
-.countdown span {
-  font-size: 9px;
-}
-
-input, textarea, select {
-  display: block;
-  width: min(100%, 340px);
-  padding: 12px;
-  margin: 8px auto;
-  border: 1px solid #d4bc96;
-  background: white;
-  font-family: inherit;
+.couple-desc {
   font-size: 12px;
-  border-radius: 4px;
+  color: #d8cbb6;
+  line-height: 1.9;
 }
 
-textarea {
-  height: 90px;
+.gallery {
+  background: #282219;
 }
 
-.music-btn {
-  position: fixed;
-  top: 17px;
-  right: 17px;
-  z-index: 20;
-  background: white;
-  color: var(--gold);
-  width: 43px;
-  height: 43px;
-  border: none;
-  border-radius: 50%;
-  font-size: 19px;
-  cursor: pointer;
-  box-shadow: 0 3px 15px #0002;
+.gallery h2 {
+  font-size: 35px;
+  margin: 15px 0 30px;
 }
 
-.navigation {
-  position: fixed;
-  z-index: 20;
-  bottom: 17px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
+.slider {
+  position: relative;
+  max-width: 570px;
+  margin: auto;
+  border: 1px solid var(--gold);
+  padding: 10px;
+  background: #171510;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 490px;
+  position: relative;
   align-items: center;
-  gap: 17px;
-  background: #fffdf3ed;
-  border-radius: 30px;
-  padding: 10px 18px;
-  box-shadow: 0 4px 18px #0002;
+  justify-content: center;
+  overflow: hidden;
+  background: #171510;
 }
 
-.navigation button {
-  background: none;
-  border: none;
+.slide.active {
+  display: flex;
+  animation: fade .8s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+}
+
+/* Foto selalu utuh, kepala tidak dipotong */
+
+@keyframes fade {
+  from {opacity: .3; transform: translateX(15px);}
+  to {opacity: 1; transform: translateX(0);}
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.arrow {
   color: var(--gold);
-  font-size: 21px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  padding: 8px 16px;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 .dots {
   display: flex;
-  gap: 6px;
+  gap: 8px;
+  justify-content: center;
 }
 
 .dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
+  background: #74634a;
   border-radius: 50%;
-  background: #d7c8ae;
   cursor: pointer;
 }
 
 .dot.active {
   background: var(--gold);
-  transform: scale(1.4);
+  transform: scale(1.3);
 }
 
-.video-box {
-  width: min(85vw, 400px);
+.event {
+  background: #211c16;
+}
+
+.event h2 {
+  font-size: 36px;
+  margin: 15px 0 30px;
+}
+
+.event-card {
+  border: 1px solid var(--gold);
+  padding: 30px 20px;
+  max-width: 480px;
   margin: 15px auto;
+  background: rgba(255,255,255,.02);
 }
 
-.video-box video {
+.event-card h3 {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.event-card p {
+  font-size: 13px;
+  line-height: 2.2;
+  color: #e5d8c4;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--dark);
+  background: var(--gold);
+  padding: 11px 25px;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 25px;
+}
+
+.closing {
+  background: #282219;
+  padding-bottom: 45px;
+}
+
+.closing h2 {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+.closing .script {
+  font-size: 48px;
+  margin-top: 25px;
+}
+
+.footer {
   width: 100%;
-  max-height: 300px;
-  background: #222;
-  border: 5px solid white;
+  padding: 25px 15px;
+  background: #171510;
+  border-top: 1px solid rgba(216,184,120,.4);
+  text-align: center;
+  color: #c7b18b;
+  font-size: 11px;
+  line-height: 2;
 }
 
-@media(max-height: 650px) {
-  .slide { padding-top: 15px; padding-bottom: 75px; }
-  .photo-main { height: 190px; }
-  .photo-wide { height: 190px; }
+.music-btn {
+  position: fixed;
+  z-index: 20;
+  right: 18px;
+  bottom: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: none;
+  color: #211c16;
+  font-size: 19px;
+  cursor: pointer;
+  box-shadow: 0 3px 15px #0008;
 }
 
-@media(min-width: 800px) {
-  .slide { padding-left: 15%; padding-right: 15%; }
+@media(max-width:600px) {
+  section { padding: 60px 18px; }
+  .slide { height: 410px; }
+  .couple-name { font-size: 38px; }
+  .event h2, .gallery h2 { font-size: 30px; }
+}
+
+@media(max-width:380px) {
+  .slide { height: 340px; }
 }
 </style>
 </head>
 
 <body>
 
-<audio id="music" loop preload="auto">
-  <source src="musik%20.mp3" type="audio/mpeg">
-</audio>
+<div class="invitation">
 
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()">♫</button>
+<!-- PEMBUKAAN -->
+<section class="cover" id="home">
+  <div class="small-title">The Wedding Of</div>
 
-<main class="slider" id="slider">
+  <h1>Sadamia<br>Nadiroha</h1>
+  <div class="and">&</div>
+  <h1>Nawarsidin<br>Nasution</h1>
 
-<!-- 1. COVER -->
-<section class="slide active">
-  <p class="small-title">The Wedding Of</p>
+  <div class="ornament">✦ ❧ ✦</div>
 
-  <img class="photo-main" src="foto%20-1.jpeg" alt="Foto pasangan">
+  <div class="date">28 NOVEMBER 2026</div>
 
-  <h1 class="names">Nama Wanita & Nama Pria</h1>
+  <div class="guest">
+    Kepada Yth.<br>
+    Bapak/Ibu/Saudara/i<br>
+    Tanpa mengurangi rasa hormat
+  </div>
 
-  <div class="line"></div>
-
-  <p class="description">
-    Dengan penuh rasa syukur dan bahagia,
-    kami mengundang Anda untuk hadir
-    di hari istimewa pernikahan kami.
-  </p>
-
-  <p class="description">Kepada Yth. Bapak/Ibu/Saudara/i</p>
-
-  <button class="btn" onclick="openInvitation()">
-    ✉ Buka Undangan
+  <button class="open-btn" onclick="openInvitation()">
+    Buka Undangan ✦
   </button>
 </section>
 
-<!-- 2. PEMBUKA -->
-<section class="slide">
-  <p class="small-title">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+<!-- SAMBUTAN -->
+<section class="intro">
+  <div class="small-title">Assalamu'alaikum Warahmatullahi Wabarakatuh</div>
+  <div class="ornament">❧ ✦ ❧</div>
 
-  <h1 class="script">Dengan Cinta</h1>
+  <h2>Dengan Memohon Ridho Allah SWT</h2>
 
-  <p class="description">
-    Atas rahmat dan ridho Allah SWT,
-    kami bermaksud menyelenggarakan
-    pernikahan putra-putri kami.
-    Merupakan suatu kehormatan bagi kami
-    apabila Anda berkenan hadir
-    untuk memberikan doa restu.
-  </p>
-
-  <img class="photo-wide" src="foto%20-2.jpeg" alt="Foto pasangan">
-</section>
-
-<!-- 3. MEMPELAI -->
-<section class="slide">
-  <p class="small-title">Bride & Groom</p>
-
-  <h1 class="script">Kedua Mempelai</h1>
-
-  <img class="photo-main" src="foto%20-3.jpeg" alt="Foto mempelai">
-
-  <h2 class="heading">Nama Wanita</h2>
-  <p class="description">
-    Putri dari Bapak [Nama Ayah] dan Ibu [Nama Ibu]
-  </p>
-
-  <h1 class="script">&</h1>
-
-  <h2 class="heading">Nama Pria</h2>
-  <p class="description">
-    Putra dari Bapak [Nama Ayah] dan Ibu [Nama Ibu]
+  <p>
+    Dengan segala kerendahan hati, kami bermaksud
+    mengundang Bapak/Ibu/Saudara/i untuk hadir
+    dan memberikan doa restu pada acara
+    pernikahan kami.
   </p>
 </section>
 
-<!-- 4. LOVE STORY -->
-<section class="slide">
-  <p class="small-title">Our Journey</p>
+<!-- MEMPELAI -->
+<section class="couple">
+  <div class="small-title">The Bride & Groom</div>
 
-  <h1 class="script">Love Story</h1>
+  <h2>Pasangan Mempelai</h2>
 
-  <img class="photo-wide" src="foto%20-4%20.jpeg" alt="Love story">
+  <div class="couple-name">Sadamia Nadiroha</div>
 
-  <p class="description">
-    Setiap pertemuan memiliki cerita.
-    Setiap perjalanan memiliki makna.
-    Dan kini, dua hati memilih untuk
-    melangkah bersama dalam satu ikatan suci.
+  <div class="ornament">&</div>
+
+  <div class="couple-name">Nawarsidin Nasution</div>
+
+  <p class="couple-desc">
+    Dua hati, satu tujuan, dan satu perjalanan
+    untuk membangun kehidupan bersama.
   </p>
 </section>
 
-<!-- 5. GALLERY -->
-<section class="slide">
-  <p class="small-title">Our Beautiful Moments</p>
+<!-- GALERI FOTO -->
+<section class="gallery">
+  <div class="small-title">Our Memories</div>
+  <h2>Galeri Bahagia</h2>
 
-  <h1 class="script">Our Gallery</h1>
+  <div class="ornament">✦ ❧ ✦</div>
 
-  <div class="photo-grid">
-    <img src="foto%20-1.jpeg" alt="Kenangan 1">
-    <img src="foto%20-2.jpeg" alt="Kenangan 2">
-    <img src="foto%20-3.jpeg" alt="Kenangan 3">
-    <img src="foto%20-4%20.jpeg" alt="Kenangan 4">
-    <img src="foto%20-5.jpeg" alt="Kenangan 5">
-    <img src="foto%20-%206.jpeg" alt="Kenangan 6">
-    <img src="foto%20-7.jpeg" alt="Kenangan 7">
+  <div class="slider" id="slider">
+
+    <div class="slide active">
+      <img src="foto%20-%201.jpeg" alt="Foto 1">
+    </div>
+
+    <div class="slide">
+      <img src="foto%20-%202.jpeg" alt="Foto 2">
+    </div>
+
+    <div class="slide">
+      <img src="foto%20-%203.jpeg" alt="Foto 3">
+    </div>
+
+    <div class="slide">
+      <img src="foto%20-%204%20.jpeg" alt="Foto 4">
+    </div>
+
+    <div class="slide">
+      <img src="foto%20-%205.jpeg" alt="Foto 5">
+    </div>
+
+    <div class="slide">
+      <img src="foto%20-%206.jpeg" alt="Foto 6">
+    </div>
+
+    <div class="slide">
+      <img src="foto%20-%207.jpeg" alt="Foto 7">
+    </div>
+
+    <div class="controls">
+      <button class="arrow" onclick="changeSlide(-1)">❮</button>
+
+      <div class="dots" id="dots"></div>
+
+      <button class="arrow" onclick="changeSlide(1)">❯</button>
+    </div>
   </div>
-
-  <p class="description">
-    Our memories, our story, our forever.
-  </p>
 </section>
 
-<!-- 6. VIDEO -->
-<section class="slide">
-  <p class="small-title">Our Moments</p>
+<!-- DETAIL ACARA -->
+<section class="event">
+  <div class="small-title">Save The Date</div>
+  <h2>Hari Bahagia Kami</h2>
 
-  <h1 class="script">Wedding Film</h1>
+  <div class="ornament">✦ ❧ ✦</div>
 
-  <div class="video-box">
-    <p class="description">
-      Video perjalanan cinta kami.
+  <div class="event-card">
+    <h3>Akad & Resepsi Pernikahan</h3>
+
+    <p>
+      Sabtu<br>
+      <strong>28 November 2026</strong>
     </p>
-    <p class="description">
-      Nama file video belum dimasukkan karena belum terlihat di daftar GitHub.
+
+    <p>
+      Pukul<br>
+      <strong>08.00 WIB – Selesai</strong>
     </p>
+
+    <p>
+      Bertempat di<br>
+      <strong>Silaping, Ranah Batahan</strong><br>
+      Pasaman Barat, Sumatera Barat
+    </p>
+
+    <a class="map-btn"
+       href="https://www.google.com/maps/search/?api=1&query=Silaping+Ranah+Batahan+Pasaman+Barat"
+       target="_blank">
+       Lihat Lokasi
+    </a>
   </div>
 </section>
 
-<!-- 7. COUNTDOWN -->
-<section class="slide">
-  <p class="small-title">Save The Date</p>
+<!-- PENUTUP -->
+<section class="closing">
+  <div class="small-title">With Love</div>
 
-  <h1 class="script">Counting The Days</h1>
+  <div class="ornament">❧ ✦ ❧</div>
 
-  <p class="description">Menuju hari bahagia kami</p>
+  <h2>Merupakan Suatu Kehormatan</h2>
 
-  <div class="countdown">
-    <div><strong id="days">00</strong><span>Hari</span></div>
-    <div><strong id="hours">00</strong><span>Jam</span></div>
-    <div><strong id="minutes">00</strong><span>Menit</span></div>
-    <div><strong id="seconds">00</strong><span>Detik</span></div>
-  </div>
-
-  <img class="photo-main" src="foto%20-5.jpeg" alt="Foto pasangan">
-</section>
-
-<!-- 8. DETAIL ACARA -->
-<section class="slide">
-  <p class="small-title">Wedding Event</p>
-
-  <h1 class="script">Hari Bahagia</h1>
-
-  <div class="details">
-    <h3>Akad Nikah</h3>
-    <p>Hari, Tanggal: [Isi tanggal]</p>
-    <p>Waktu: [Isi jam akad]</p>
-    <p>Tempat: [Isi lokasi]</p>
-  </div>
-
-  <div class="details">
-    <h3>Resepsi</h3>
-    <p>Hari, Tanggal: [Isi tanggal]</p>
-    <p>Waktu: [Isi jam resepsi]</p>
-    <p>Tempat: [Isi lokasi]</p>
-  </div>
-
-  <a class="btn" href="https://maps.google.com" target="_blank">
-    📍 Lihat Lokasi
-  </a>
-</section>
-
-<!-- 9. RSVP -->
-<section class="slide">
-  <p class="small-title">Confirmation</p>
-
-  <h1 class="script">RSVP & Wishes</h1>
-
-  <p class="description">
-    Kehadiran dan doa restu Anda merupakan
-    kebahagiaan bagi kami.
+  <p>
+    Kehadiran dan doa restu Bapak/Ibu/Saudara/i
+    merupakan kebahagiaan tersendiri bagi kami.
+    Terima kasih atas segala doa dan perhatian
+    yang diberikan.
   </p>
 
-  <input id="guestName" placeholder="Nama Anda">
+  <div class="script">Sadamia & Nawarsidin</div>
 
-  <select id="attendance">
-    <option value="Hadir">Saya akan hadir</option>
-    <option value="Tidak hadir">Maaf, tidak bisa hadir</option>
-  </select>
+  <div class="ornament">✦ ❧ ✦</div>
 
-  <textarea id="guestMessage" placeholder="Tuliskan doa dan ucapan..."></textarea>
-
-  <button class="btn" onclick="sendRSVP()">
-    Kirim Ucapan
-  </button>
-</section>
-
-<!-- 10. PENUTUP -->
-<section class="slide">
-  <p class="small-title">Thank You</p>
-
-  <img class="photo-main" src="foto%20-7.jpeg" alt="Foto penutup">
-
-  <h1 class="script">Terima Kasih</h1>
-
-  <p class="description">
-    Merupakan suatu kebahagiaan dan kehormatan
-    bagi kami apabila Anda berkenan hadir
-    dan memberikan doa restu.
-  </p>
-
-  <h2 class="names">Nama Wanita & Nama Pria</h2>
-
-  <p class="description">
+  <p>
     Wassalamu'alaikum Warahmatullahi Wabarakatuh
   </p>
 </section>
 
-</main>
+<!-- FOOTER DI DALAM BINGKAI -->
+<footer class="footer">
+  <div>✦ SADAMIA & NAWARSIDIN ✦</div>
+  <div>Terima kasih telah menjadi bagian dari hari bahagia kami.</div>
+  <div>© 2026 Wedding Invitation</div>
+</footer>
 
-<nav class="navigation">
-  <button onclick="changeSlide(-1)">❮</button>
-  <div class="dots" id="dots"></div>
-  <button onclick="changeSlide(1)">❯</button>
-</nav>
+</div>
+
+<!-- MUSIK -->
+<audio id="weddingMusic" loop preload="auto">
+  <source src="musik%20.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" id="musicButton" onclick="toggleMusic()">
+  ♫
+</button>
 
 <script>
+let currentSlide = 0;
+let slideTimer;
+let musicPlaying = false;
+
 const slides = document.querySelectorAll('.slide');
 const dotsContainer = document.getElementById('dots');
-const music = document.getElementById('music');
-const musicBtn = document.getElementById('musicBtn');
+const music = document.getElementById('weddingMusic');
+const musicButton = document.getElementById('musicButton');
 
-let currentSlide = 0;
-let autoSlide = null;
-let opened = false;
-
+// MEMBUAT TITIK NAVIGASI
 slides.forEach((slide, index) => {
   const dot = document.createElement('span');
   dot.className = 'dot' + (index === 0 ? ' active' : '');
-  dot.onclick = () => showSlide(index);
+
+  dot.onclick = () => {
+    showSlide(index);
+    restartTimer();
+  };
+
   dotsContainer.appendChild(dot);
 });
 
 const dots = document.querySelectorAll('.dot');
 
+// SLIDE FOTO
 function showSlide(index) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+
   currentSlide = (index + slides.length) % slides.length;
 
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === currentSlide);
-  });
-
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === currentSlide);
-  });
-
-  if (opened) startAutoSlide();
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
 }
 
 function changeSlide(direction) {
   showSlide(currentSlide + direction);
+  restartTimer();
 }
 
-function startAutoSlide() {
-  clearInterval(autoSlide);
-  autoSlide = setInterval(() => {
-    changeSlide(1);
+function restartTimer() {
+  clearInterval(slideTimer);
+
+  slideTimer = setInterval(() => {
+    showSlide(currentSlide + 1);
   }, 7000);
 }
 
-function openInvitation() {
-  opened = true;
-  showSlide(1);
+restartTimer();
 
-  music.play().then(() => {
-    musicBtn.textContent = '♫';
-  }).catch(() => {
-    musicBtn.textContent = '♪';
+// BUKA UNDANGAN
+function openInvitation() {
+  document.getElementById('home').scrollIntoView({
+    behavior: 'smooth'
   });
 
-  startAutoSlide();
+  music.play().then(() => {
+    musicPlaying = true;
+    musicButton.textContent = '♫';
+  }).catch(() => {
+    musicPlaying = false;
+  });
 }
 
+// MUSIK
 function toggleMusic() {
-  if (music.paused) {
-    music.play().then(() => {
-      musicBtn.textContent = '♫';
-    }).catch(() => {
-      alert('Musik belum dapat diputar. Periksa file musik.');
-    });
-  } else {
+  if (musicPlaying) {
     music.pause();
-    musicBtn.textContent = '♪';
-  }
-}
-
-// COUNTDOWN
-// GANTI tanggal ini sesuai tanggal pernikahan.
-const weddingDate = new Date('2027-06-20T08:00:00+07:00').getTime();
-
-function updateCountdown() {
-  const distance = weddingDate - Date.now();
-
-  if (distance <= 0) {
-    ['days','hours','minutes','seconds'].forEach(id => {
-      document.getElementById(id).textContent = '00';
+    musicPlaying = false;
+    musicButton.textContent = '♪';
+  } else {
+    music.play().then(() => {
+      musicPlaying = true;
+      musicButton.textContent = '♫';
+    }).catch(() => {
+      musicPlaying = false;
     });
-    return;
   }
-
-  document.getElementById('days').textContent =
-    Math.floor(distance / 86400000);
-
-  document.getElementById('hours').textContent =
-    Math.floor(distance % 86400000 / 3600000);
-
-  document.getElementById('minutes').textContent =
-    Math.floor(distance % 3600000 / 60000);
-
-  document.getElementById('seconds').textContent =
-    Math.floor(distance % 60000 / 1000);
 }
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+// GESER FOTO DENGAN SENTUHAN HP
+let touchStartX = 0;
 
-// RSVP WHATSAPP
-function sendRSVP() {
-  const name = document.getElementById('guestName').value.trim();
-  const attendance = document.getElementById('attendance').value;
-  const message = document.getElementById('guestMessage').value.trim();
+const slider = document.getElementById('slider');
 
-  if (!name || !message) {
-    alert('Silakan isi nama dan ucapan terlebih dahulu.');
-    return;
+slider.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, {passive: true});
+
+slider.addEventListener('touchend', (e) => {
+  const touchEndX = e.changedTouches[0].screenX;
+  const distance = touchEndX - touchStartX;
+
+  if (Math.abs(distance) > 45) {
+    changeSlide(distance < 0 ? 1 : -1);
   }
+}, {passive: true});
 
-  // GANTI dengan nomor WhatsApp pemilik undangan.
-  const phone = '6281234567890';
-
-  const text =
-    `Assalamu'alaikum.\nNama: ${name}\nKonfirmasi: ${attendance}\nUcapan: ${message}`;
-
-  window.open(
-    'https://wa.me/' + phone + '?text=' + encodeURIComponent(text),
-    '_blank'
-  );
-}
-
-// SWIPE UNTUK HP
-let touchStart = 0;
-
-document.getElementById('slider').addEventListener('touchstart', e => {
-  touchStart = e.changedTouches[0].screenX;
-}, {passive:true});
-
-document.getElementById('slider').addEventListener('touchend', e => {
-  const diff = e.changedTouches[0].screenX - touchStart;
-
-  if (Math.abs(diff) > 60) {
-    changeSlide(diff < 0 ? 1 : -1);
-  }
-}, {passive:true});
-
-// KEYBOARD NAVIGATION
-document.addEventListener('keydown', e => {
+// NAVIGASI KEYBOARD
+document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') changeSlide(1);
   if (e.key === 'ArrowLeft') changeSlide(-1);
 });
