@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #bd9b62;
+  --cream: #f8f3eb;
+  --dark: #493b30;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  overflow: hidden;
+}
+
+.slider {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 35px 22px 90px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(40px);
+  transition: opacity 1s ease, transform 1s ease, visibility 1s;
+  overflow-y: auto;
+  background:
+    linear-gradient(rgba(248,243,235,.87),rgba(248,243,235,.92)),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600')
+    center/cover;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.slide h1,
+.slide h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+.small-title {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+
+.script {
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold);
+  font-size: clamp(43px, 9vw, 76px);
+  line-height: 1.3;
+}
+
+.main-title {
+  font-size: clamp(38px, 8vw, 65px);
+  line-height: 1.15;
+  margin: 15px 0;
+}
+
+.description {
+  max-width: 540px;
+  font-size: 13px;
+  line-height: 2;
+  color: #776b60;
+  margin: 15px auto;
+}
+
+.gold-line {
+  width: 65px;
+  height: 1px;
+  background: var(--gold);
+  margin: 20px auto;
+}
+
+.cover-photo {
+  width: 210px;
+  height: 275px;
+  object-fit: cover;
+  border-radius: 110px 110px 8px 8px;
+  border: 5px solid white;
+  box-shadow: 0 10px 35px #0002;
+  margin: 15px 0;
+}
+
+.photo {
+  width: min(75vw, 340px);
+  height: 330px;
+  object-fit: cover;
+  border: 6px solid white;
+  box-shadow: 0 10px 30px #0002;
+  border-radius: 5px;
+  margin: 15px auto;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 145px));
+  gap: 12px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 5px 20px #0002;
+}
+
+.photo-grid img:last-child {
+  grid-column: span 2;
+  width: 145px;
+  justify-self: center;
+}
+
+.names {
+  font-family: 'Great Vibes', cursive;
+  color: var(--gold);
+  font-size: clamp(43px, 9vw, 70px);
+  margin: 15px 0;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: white;
+  padding: 12px 27px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 10px 5px;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+}
+
+.details {
+  border: 1px solid #c6aa7d;
+  padding: 22px;
+  width: min(100%, 390px);
+  margin: 12px auto;
+  background: #ffffff80;
+}
+
+.details h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.details p {
+  font-size: 12px;
+  line-height: 2;
+}
+
+.countdown {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.countdown div {
+  background: white;
+  padding: 14px 10px;
+  min-width: 65px;
+  box-shadow: 0 3px 15px #0001;
+}
+
+.countdown strong {
+  display: block;
+  font-size: 23px;
+  color: var(--gold);
+}
+
+.countdown span {
+  font-size: 9px;
+}
+
+input, textarea {
+  width: min(100%, 340px);
+  padding: 12px;
+  border: 1px solid #d9c9ae;
+  background: #fff;
+  margin: 6px;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+textarea {
+  height: 90px;
+  resize: vertical;
+}
+
+.navigation {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  z-index: 20;
+  background: #fffdf5e8;
+  padding: 9px 17px;
+  border-radius: 30px;
+  box-shadow: 0 4px 20px #0002;
+}
+
+.navigation button {
+  border: none;
+  background: none;
+  color: var(--gold);
+  font-size: 21px;
+  cursor: pointer;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d8c9ae;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--gold);
+  transform: scale(1.3);
+}
+
+.music {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 30;
+  border: none;
+  background: white;
+  color: var(--gold);
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  box-shadow: 0 3px 15px #0002;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+@media(max-height: 650px) {
+  .slide { padding-top: 20px; padding-bottom: 75px; }
+  .photo { height: 220px; }
+  .cover-photo { height: 200px; }
+}
+
+@media(min-width: 800px) {
+  .slide { padding-left: 15%; padding-right: 15%; }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" id="musicBtn" onclick="toggleMusic()">♫</button>
+
+<main class="slider" id="slider">
+
+<!-- SLIDE 1: COVER -->
+<section class="slide active">
+  <p class="small-title">The Wedding Of</p>
+
+  <img class="cover-photo" src="foto-1.jpg" alt="Foto pasangan">
+
+  <h1 class="names">Nama Wanita & Nama Pria</h1>
+
+  <div class="gold-line"></div>
+
+  <p class="description">
+    Dengan penuh rasa syukur dan bahagia,
+    kami mengundang Anda untuk hadir
+    di hari istimewa pernikahan kami.
+  </p>
+
+  <p class="description">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+
+  <button class="btn" onclick="openInvitation()">
+    ✉ Buka Undangan
+  </button>
+</section>
+
+<!-- SLIDE 2: SALAM -->
+<section class="slide">
+  <p class="small-title">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+
+  <h1 class="script">Dengan Cinta</h1>
+
+  <p class="description">
+    Atas rahmat dan ridho Allah SWT,
+    kami bermaksud menyelenggarakan
+    pernikahan putra-putri kami.
+    Merupakan suatu kehormatan bagi kami
+    apabila Bapak/Ibu/Saudara/i berkenan hadir
+    untuk memberikan doa restu.
+  </p>
+
+  <img class="photo" src="foto-2.jpg" alt="Foto prewedding">
+</section>
+
+<!-- SLIDE 3: MEMPELAI -->
+<section class="slide">
+  <p class="small-title">Bride & Groom</p>
+
+  <h1 class="script">Kedua Mempelai</h1>
+
+  <img class="cover-photo" src="foto-3.jpg" alt="Foto kedua mempelai">
+
+  <h2 class="main-title">Nama Wanita</h2>
+  <p class="description">
+    Putri dari Bapak [Nama Ayah]
+    dan Ibu [Nama Ibu]
+  </p>
+
+  <h1 class="script">&</h1>
+
+  <h2 class="main-title">Nama Pria</h2>
+  <p class="description">
+    Putra dari Bapak [Nama Ayah]
+    dan Ibu [Nama Ibu]
+  </p>
+</section>
+
+<!-- SLIDE 4: LOVE STORY -->
+<section class="slide">
+  <p class="small-title">Our Journey</p>
+
+  <h1 class="script">Love Story</h1>
+
+  <img class="photo" src="foto-4.jpg" alt="Cerita perjalanan cinta">
+
+  <p class="description">
+    Setiap pertemuan memiliki cerita.
+    Setiap perjalanan memiliki makna.
+    Dan kini, dua hati memilih untuk
+    melangkah bersama dalam satu ikatan suci.
+  </p>
+</section>
+
+<!-- SLIDE 5: GALLERY -->
+<section class="slide">
+  <p class="small-title">Our Memories</p>
+
+  <h1 class="script">Our Gallery</h1>
+
+  <div class="photo-grid">
+    <img src="foto-1.jpg" alt="Foto 1">
+    <img src="foto-2.jpg" alt="Foto 2">
+    <img src="foto-3.jpg" alt="Foto 3">
+  </div>
+
+  <p class="description">
+    Beberapa kenangan indah dalam perjalanan kami.
+  </p>
+</section>
+
+<!-- SLIDE 6: COUNTDOWN -->
+<section class="slide">
+  <p class="small-title">Save The Date</p>
+
+  <h1 class="script">Counting The Days</h1>
+
+  <p class="description">
+    Menuju hari bahagia kami
+  </p>
+
+  <div class="countdown">
+    <div><strong id="days">00</strong><span>Hari</span></div>
+    <div><strong id="hours">00</strong><span>Jam</span></div>
+    <div><strong id="minutes">00</strong><span>Menit</span></div>
+    <div><strong id="seconds">00</strong><span>Detik</span></div>
+  </div>
+
+  <img class="photo" src="foto-5.jpg" alt="Foto pasangan">
+</section>
+
+<!-- SLIDE 7: EVENT -->
+<section class="slide">
+  <p class="small-title">Wedding Event</p>
+
+  <h1 class="script">Hari Bahagia</h1>
+
+  <div class="details">
+    <h3>Akad Nikah</h3>
+    <p>Hari, Tanggal: [Isi tanggal]</p>
+    <p>Waktu: [Isi jam akad]</p>
+    <p>Tempat: [Isi lokasi]</p>
+  </div>
+
+  <div class="details">
+    <h3>Resepsi</h3>
+    <p>Hari, Tanggal: [Isi tanggal]</p>
+    <p>Waktu: [Isi jam resepsi]</p>
+    <p>Tempat: [Isi lokasi]</p>
+  </div>
+
+  <a class="btn" href="https://maps.google.com" target="_blank">
+    📍 Lihat Lokasi
+  </a>
+</section>
+
+<!-- SLIDE 8: RSVP -->
+<section class="slide">
+  <p class="small-title">Confirmation</p>
+
+  <h1 class="script">RSVP</h1>
+
+  <p class="description">
+    Kehadiran dan doa restu Anda merupakan
+    kebahagiaan bagi kami.
+  </p>
+
+  <input id="guestName" placeholder="Nama Anda">
+
+  <textarea id="guestMessage" placeholder="Tuliskan doa dan ucapan..."></textarea>
+
+  <button class="btn" onclick="sendRSVP()">
+    Kirim Ucapan
+  </button>
+</section>
+
+<!-- SLIDE 9: CLOSING -->
+<section class="slide">
+  <p class="small-title">Thank You</p>
+
+  <img class="cover-photo" src="foto-5.jpg" alt="Foto penutup">
+
+  <h1 class="script">Terima Kasih</h1>
+
+  <p class="description">
+    Merupakan suatu kebahagiaan dan kehormatan
+    bagi kami apabila Anda berkenan hadir
+    dan memberikan doa restu.
+  </p>
+
+  <h2 class="names">Nama Wanita & Nama Pria</h2>
+
+  <p class="description">
+    Wassalamu'alaikum Warahmatullahi Wabarakatuh
+  </p>
+</section>
+
+</main>
+
+<!-- NAVIGATION -->
+<nav class="navigation">
+  <button onclick="changeSlide(-1)">❮</button>
+  <div class="dots" id="dots"></div>
+  <button onclick="changeSlide(1)">❯</button>
+</nav>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const dotsContainer = document.getElementById('dots');
+
+let currentSlide = 0;
+let autoSlide;
+let invitationOpened = false;
+
+const music = document.getElementById('music');
+const musicBtn = document.getElementById('musicBtn');
+
+// Membuat titik navigasi otomatis
+slides.forEach((slide, index) => {
+  const dot = document.createElement('span');
+  dot.className = 'dot' + (index === 0 ? ' active' : '');
+  dot.onclick = () => showSlide(index);
+  dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.dot');
+
+function showSlide(index) {
+  currentSlide = (index + slides.length) % slides.length;
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === currentSlide);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentSlide);
+  });
+
+  resetAutoSlide();
+}
+
+function changeSlide(direction) {
+  showSlide(currentSlide + direction);
+}
+
+function startAutoSlide() {
+  clearInterval(autoSlide);
+  autoSlide = setInterval(() => {
+    changeSlide(1);
+  }, 6500);
+}
+
+function resetAutoSlide() {
+  if (invitationOpened) startAutoSlide();
+}
+
+function openInvitation() {
+  invitationOpened = true;
+  showSlide(1);
+  music.play().then(() => {
+    musicBtn.textContent = '♫';
+  }).catch(() => {
+    musicBtn.textContent = '♪';
+  });
+  startAutoSlide();
+}
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play().then(() => {
+      musicBtn.textContent = '♫';
+    }).catch(() => {
+      alert('Silakan coba tekan tombol musik sekali lagi.');
+    });
+  } else {
+    music.pause();
+    musicBtn.textContent = '♪';
+  }
+}
+
+// Countdown: GANTI tanggal di bawah sesuai hari pernikahan
+const weddingDate = new Date('2027-06-20T08:00:00+07:00').getTime();
+
+function updateCountdown() {
+  const now = Date.now();
+  const distance = weddingDate - now;
+
+  if (distance <= 0) {
+    ['days','hours','minutes','seconds'].forEach(id => {
+      document.getElementById(id).textContent = '00';
+    });
+    return;
+  }
+
+  document.getElementById('days').textContent =
+    Math.floor(distance / 86400000);
+
+  document.getElementById('hours').textContent =
+    Math.floor((distance % 86400000) / 3600000);
+
+  document.getElementById('minutes').textContent =
+    Math.floor((distance % 3600000) / 60000);
+
+  document.getElementById('seconds').textContent =
+    Math.floor((distance % 60000) / 1000);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// RSVP melalui WhatsApp
+function sendRSVP() {
+  const name = document.getElementById('guestName').value.trim();
+  const message = document.getElementById('guestMessage').value.trim();
+
+  if (!name || !message) {
+    alert('Silakan isi nama dan ucapan terlebih dahulu.');
+    return;
+  }
+
+  const phone = '6281234567890'; // GANTI dengan nomor WhatsApp pemilik undangan
+
+  const text = `Assalamu'alaikum, saya ${name}.\n\n${message}\n\nTerima kasih.`;
+
+  window.open(
+    `https://wa.me/${phone}?text=${encodeURIComponent(text)}`,
+    '_blank'
+  );
+}
+
+// Geser slide dengan sentuhan HP
+let touchStart = 0;
+
+document.getElementById('slider').addEventListener('touchstart', e => {
+  touchStart = e.changedTouches[0].screenX;
+}, {passive:true});
+
+document.getElementById('slider').addEventListener('touchend', e => {
+  const difference = e.changedTouches[0].screenX - touchStart;
+
+  if (Math.abs(difference) > 60) {
+    changeSlide(difference < 0 ? 1 : -1);
+  }
+}, {passive:true});
+</script>
+
+</body>
+</html>
