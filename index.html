@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wedding Invitation</title>
+<title>The Wedding Invitation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -16,43 +16,42 @@
 }
 
 :root {
-  --gold: #bd9b62;
-  --cream: #f8f3eb;
-  --dark: #493b30;
+  --gold: #b49360;
+  --cream: #f8f2e9;
+  --brown: #514236;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
+  color: var(--brown);
   background: var(--cream);
-  color: var(--dark);
   overflow: hidden;
 }
 
 .slider {
-  width: 100%;
-  height: 100vh;
   position: relative;
+  height: 100dvh;
+  width: 100%;
   overflow: hidden;
 }
 
 .slide {
   position: absolute;
   inset: 0;
+  padding: 35px 20px 95px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 35px 22px 90px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(40px);
-  transition: opacity 1s ease, transform 1s ease, visibility 1s;
   overflow-y: auto;
   background:
-    linear-gradient(rgba(248,243,235,.87),rgba(248,243,235,.92)),
-    url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600')
-    center/cover;
+    linear-gradient(#f8f2e9e8,#f8f2e9ed),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600') center/cover;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(50px);
+  transition: opacity .8s ease, transform .8s ease, visibility .8s;
 }
 
 .slide.active {
@@ -62,109 +61,103 @@ body {
   z-index: 2;
 }
 
-.slide h1,
-.slide h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-}
-
 .small-title {
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  font-size: 11px;
   color: var(--gold);
-  margin-bottom: 18px;
+  letter-spacing: 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 .script {
   font-family: 'Great Vibes', cursive;
   color: var(--gold);
-  font-size: clamp(43px, 9vw, 76px);
-  line-height: 1.3;
+  font-size: clamp(43px, 9vw, 75px);
+  font-weight: 400;
+  line-height: 1.25;
 }
 
-.main-title {
-  font-size: clamp(38px, 8vw, 65px);
-  line-height: 1.15;
-  margin: 15px 0;
-}
-
-.description {
-  max-width: 540px;
-  font-size: 13px;
-  line-height: 2;
-  color: #776b60;
-  margin: 15px auto;
-}
-
-.gold-line {
-  width: 65px;
-  height: 1px;
-  background: var(--gold);
-  margin: 20px auto;
-}
-
-.cover-photo {
-  width: 210px;
-  height: 275px;
-  object-fit: cover;
-  border-radius: 110px 110px 8px 8px;
-  border: 5px solid white;
-  box-shadow: 0 10px 35px #0002;
-  margin: 15px 0;
-}
-
-.photo {
-  width: min(75vw, 340px);
-  height: 330px;
-  object-fit: cover;
-  border: 6px solid white;
-  box-shadow: 0 10px 30px #0002;
-  border-radius: 5px;
-  margin: 15px auto;
-}
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 145px));
-  gap: 12px;
-  justify-content: center;
-  margin: 20px auto;
-}
-
-.photo-grid img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border: 5px solid white;
-  box-shadow: 0 5px 20px #0002;
-}
-
-.photo-grid img:last-child {
-  grid-column: span 2;
-  width: 145px;
-  justify-self: center;
+.heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 7vw, 52px);
+  font-weight: 500;
 }
 
 .names {
   font-family: 'Great Vibes', cursive;
-  color: var(--gold);
   font-size: clamp(43px, 9vw, 70px);
+  color: var(--gold);
+  margin: 12px 0;
+}
+
+.description {
+  max-width: 520px;
+  font-size: 12px;
+  line-height: 2;
+  color: #776b60;
+  margin: 13px auto;
+}
+
+.line {
+  height: 1px;
+  width: 65px;
+  background: var(--gold);
+  margin: 17px auto;
+}
+
+.photo-main {
+  width: min(70vw, 260px);
+  height: 290px;
+  object-fit: cover;
+  border: 6px solid white;
+  border-radius: 140px 140px 5px 5px;
+  box-shadow: 0 8px 30px #0002;
+  margin: 12px 0;
+}
+
+.photo-wide {
+  width: min(85vw, 420px);
+  height: 290px;
+  object-fit: cover;
+  border: 6px solid white;
+  box-shadow: 0 8px 30px #0002;
   margin: 15px 0;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 155px));
+  gap: 12px;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 5px 18px #0002;
+}
+
+.photo-grid img:nth-child(7) {
+  grid-column: span 2;
+  width: 155px;
+  justify-self: center;
 }
 
 .btn {
   display: inline-block;
-  border: 1px solid var(--gold);
   background: var(--gold);
   color: white;
+  border: 1px solid var(--gold);
   padding: 12px 27px;
   border-radius: 30px;
   font-family: inherit;
   font-size: 12px;
-  cursor: pointer;
-  margin: 10px 5px;
   text-decoration: none;
+  cursor: pointer;
+  margin: 8px;
   transition: .3s;
 }
 
@@ -179,18 +172,18 @@ body {
 }
 
 .details {
-  border: 1px solid #c6aa7d;
-  padding: 22px;
-  width: min(100%, 390px);
-  margin: 12px auto;
-  background: #ffffff80;
+  width: min(100%, 380px);
+  background: #fff9f0c9;
+  border: 1px solid #d4bc96;
+  padding: 20px;
+  margin: 10px auto;
 }
 
 .details h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 27px;
   color: var(--gold);
-  margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 8px;
 }
 
 .details p {
@@ -200,16 +193,16 @@ body {
 
 .countdown {
   display: flex;
-  gap: 10px;
   justify-content: center;
-  margin: 25px 0;
+  gap: 9px;
+  margin: 22px 0;
 }
 
 .countdown div {
   background: white;
-  padding: 14px 10px;
-  min-width: 65px;
-  box-shadow: 0 3px 15px #0001;
+  padding: 13px 9px;
+  min-width: 63px;
+  box-shadow: 0 4px 15px #0001;
 }
 
 .countdown strong {
@@ -222,39 +215,56 @@ body {
   font-size: 9px;
 }
 
-input, textarea {
+input, textarea, select {
+  display: block;
   width: min(100%, 340px);
   padding: 12px;
-  border: 1px solid #d9c9ae;
-  background: #fff;
-  margin: 6px;
+  margin: 8px auto;
+  border: 1px solid #d4bc96;
+  background: white;
   font-family: inherit;
   font-size: 12px;
+  border-radius: 4px;
 }
 
 textarea {
   height: 90px;
-  resize: vertical;
+}
+
+.music-btn {
+  position: fixed;
+  top: 17px;
+  right: 17px;
+  z-index: 20;
+  background: white;
+  color: var(--gold);
+  width: 43px;
+  height: 43px;
+  border: none;
+  border-radius: 50%;
+  font-size: 19px;
+  cursor: pointer;
+  box-shadow: 0 3px 15px #0002;
 }
 
 .navigation {
   position: fixed;
-  bottom: 20px;
+  z-index: 20;
+  bottom: 17px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 17px;
-  z-index: 20;
-  background: #fffdf5e8;
-  padding: 9px 17px;
+  background: #fffdf3ed;
   border-radius: 30px;
-  box-shadow: 0 4px 20px #0002;
+  padding: 10px 18px;
+  box-shadow: 0 4px 18px #0002;
 }
 
 .navigation button {
-  border: none;
   background: none;
+  border: none;
   color: var(--gold);
   font-size: 21px;
   cursor: pointer;
@@ -269,35 +279,31 @@ textarea {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #d8c9ae;
+  background: #d7c8ae;
   cursor: pointer;
 }
 
 .dot.active {
   background: var(--gold);
-  transform: scale(1.3);
+  transform: scale(1.4);
 }
 
-.music {
-  position: fixed;
-  top: 18px;
-  right: 18px;
-  z-index: 30;
-  border: none;
-  background: white;
-  color: var(--gold);
-  width: 43px;
-  height: 43px;
-  border-radius: 50%;
-  box-shadow: 0 3px 15px #0002;
-  cursor: pointer;
-  font-size: 19px;
+.video-box {
+  width: min(85vw, 400px);
+  margin: 15px auto;
+}
+
+.video-box video {
+  width: 100%;
+  max-height: 300px;
+  background: #222;
+  border: 5px solid white;
 }
 
 @media(max-height: 650px) {
-  .slide { padding-top: 20px; padding-bottom: 75px; }
-  .photo { height: 220px; }
-  .cover-photo { height: 200px; }
+  .slide { padding-top: 15px; padding-bottom: 75px; }
+  .photo-main { height: 190px; }
+  .photo-wide { height: 190px; }
 }
 
 @media(min-width: 800px) {
@@ -308,23 +314,23 @@ textarea {
 
 <body>
 
-<audio id="music" loop>
-  <source src="musik.mp3" type="audio/mpeg">
+<audio id="music" loop preload="auto">
+  <source src="musik%20.mp3" type="audio/mpeg">
 </audio>
 
-<button class="music" id="musicBtn" onclick="toggleMusic()">♫</button>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">♫</button>
 
 <main class="slider" id="slider">
 
-<!-- SLIDE 1: COVER -->
+<!-- 1. COVER -->
 <section class="slide active">
   <p class="small-title">The Wedding Of</p>
 
-  <img class="cover-photo" src="foto-1.jpg" alt="Foto pasangan">
+  <img class="photo-main" src="foto%20-1.jpeg" alt="Foto pasangan">
 
   <h1 class="names">Nama Wanita & Nama Pria</h1>
 
-  <div class="gold-line"></div>
+  <div class="line"></div>
 
   <p class="description">
     Dengan penuh rasa syukur dan bahagia,
@@ -339,7 +345,7 @@ textarea {
   </button>
 </section>
 
-<!-- SLIDE 2: SALAM -->
+<!-- 2. PEMBUKA -->
 <section class="slide">
   <p class="small-title">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
 
@@ -350,43 +356,41 @@ textarea {
     kami bermaksud menyelenggarakan
     pernikahan putra-putri kami.
     Merupakan suatu kehormatan bagi kami
-    apabila Bapak/Ibu/Saudara/i berkenan hadir
+    apabila Anda berkenan hadir
     untuk memberikan doa restu.
   </p>
 
-  <img class="photo" src="foto-2.jpg" alt="Foto prewedding">
+  <img class="photo-wide" src="foto%20-2.jpeg" alt="Foto pasangan">
 </section>
 
-<!-- SLIDE 3: MEMPELAI -->
+<!-- 3. MEMPELAI -->
 <section class="slide">
   <p class="small-title">Bride & Groom</p>
 
   <h1 class="script">Kedua Mempelai</h1>
 
-  <img class="cover-photo" src="foto-3.jpg" alt="Foto kedua mempelai">
+  <img class="photo-main" src="foto%20-3.jpeg" alt="Foto mempelai">
 
-  <h2 class="main-title">Nama Wanita</h2>
+  <h2 class="heading">Nama Wanita</h2>
   <p class="description">
-    Putri dari Bapak [Nama Ayah]
-    dan Ibu [Nama Ibu]
+    Putri dari Bapak [Nama Ayah] dan Ibu [Nama Ibu]
   </p>
 
   <h1 class="script">&</h1>
 
-  <h2 class="main-title">Nama Pria</h2>
+  <h2 class="heading">Nama Pria</h2>
   <p class="description">
-    Putra dari Bapak [Nama Ayah]
-    dan Ibu [Nama Ibu]
+    Putra dari Bapak [Nama Ayah] dan Ibu [Nama Ibu]
   </p>
 </section>
 
-<!-- SLIDE 4: LOVE STORY -->
+<!-- 4. LOVE STORY -->
 <section class="slide">
   <p class="small-title">Our Journey</p>
 
   <h1 class="script">Love Story</h1>
 
-  <img class="photo" src="foto-4.jpg" alt="Cerita perjalanan cinta">
+  <img class="photo-wide" src="foto%20-4%20.jpeg" alt="Love story">
 
   <p class="description">
     Setiap pertemuan memiliki cerita.
@@ -396,32 +400,50 @@ textarea {
   </p>
 </section>
 
-<!-- SLIDE 5: GALLERY -->
+<!-- 5. GALLERY -->
 <section class="slide">
-  <p class="small-title">Our Memories</p>
+  <p class="small-title">Our Beautiful Moments</p>
 
   <h1 class="script">Our Gallery</h1>
 
   <div class="photo-grid">
-    <img src="foto-1.jpg" alt="Foto 1">
-    <img src="foto-2.jpg" alt="Foto 2">
-    <img src="foto-3.jpg" alt="Foto 3">
+    <img src="foto%20-1.jpeg" alt="Kenangan 1">
+    <img src="foto%20-2.jpeg" alt="Kenangan 2">
+    <img src="foto%20-3.jpeg" alt="Kenangan 3">
+    <img src="foto%20-4%20.jpeg" alt="Kenangan 4">
+    <img src="foto%20-5.jpeg" alt="Kenangan 5">
+    <img src="foto%20-%206.jpeg" alt="Kenangan 6">
+    <img src="foto%20-7.jpeg" alt="Kenangan 7">
   </div>
 
   <p class="description">
-    Beberapa kenangan indah dalam perjalanan kami.
+    Our memories, our story, our forever.
   </p>
 </section>
 
-<!-- SLIDE 6: COUNTDOWN -->
+<!-- 6. VIDEO -->
+<section class="slide">
+  <p class="small-title">Our Moments</p>
+
+  <h1 class="script">Wedding Film</h1>
+
+  <div class="video-box">
+    <p class="description">
+      Video perjalanan cinta kami.
+    </p>
+    <p class="description">
+      Nama file video belum dimasukkan karena belum terlihat di daftar GitHub.
+    </p>
+  </div>
+</section>
+
+<!-- 7. COUNTDOWN -->
 <section class="slide">
   <p class="small-title">Save The Date</p>
 
   <h1 class="script">Counting The Days</h1>
 
-  <p class="description">
-    Menuju hari bahagia kami
-  </p>
+  <p class="description">Menuju hari bahagia kami</p>
 
   <div class="countdown">
     <div><strong id="days">00</strong><span>Hari</span></div>
@@ -430,10 +452,10 @@ textarea {
     <div><strong id="seconds">00</strong><span>Detik</span></div>
   </div>
 
-  <img class="photo" src="foto-5.jpg" alt="Foto pasangan">
+  <img class="photo-main" src="foto%20-5.jpeg" alt="Foto pasangan">
 </section>
 
-<!-- SLIDE 7: EVENT -->
+<!-- 8. DETAIL ACARA -->
 <section class="slide">
   <p class="small-title">Wedding Event</p>
 
@@ -458,11 +480,11 @@ textarea {
   </a>
 </section>
 
-<!-- SLIDE 8: RSVP -->
+<!-- 9. RSVP -->
 <section class="slide">
   <p class="small-title">Confirmation</p>
 
-  <h1 class="script">RSVP</h1>
+  <h1 class="script">RSVP & Wishes</h1>
 
   <p class="description">
     Kehadiran dan doa restu Anda merupakan
@@ -471,6 +493,11 @@ textarea {
 
   <input id="guestName" placeholder="Nama Anda">
 
+  <select id="attendance">
+    <option value="Hadir">Saya akan hadir</option>
+    <option value="Tidak hadir">Maaf, tidak bisa hadir</option>
+  </select>
+
   <textarea id="guestMessage" placeholder="Tuliskan doa dan ucapan..."></textarea>
 
   <button class="btn" onclick="sendRSVP()">
@@ -478,11 +505,11 @@ textarea {
   </button>
 </section>
 
-<!-- SLIDE 9: CLOSING -->
+<!-- 10. PENUTUP -->
 <section class="slide">
   <p class="small-title">Thank You</p>
 
-  <img class="cover-photo" src="foto-5.jpg" alt="Foto penutup">
+  <img class="photo-main" src="foto%20-7.jpeg" alt="Foto penutup">
 
   <h1 class="script">Terima Kasih</h1>
 
@@ -501,7 +528,6 @@ textarea {
 
 </main>
 
-<!-- NAVIGATION -->
 <nav class="navigation">
   <button onclick="changeSlide(-1)">❮</button>
   <div class="dots" id="dots"></div>
@@ -511,15 +537,13 @@ textarea {
 <script>
 const slides = document.querySelectorAll('.slide');
 const dotsContainer = document.getElementById('dots');
-
-let currentSlide = 0;
-let autoSlide;
-let invitationOpened = false;
-
 const music = document.getElementById('music');
 const musicBtn = document.getElementById('musicBtn');
 
-// Membuat titik navigasi otomatis
+let currentSlide = 0;
+let autoSlide = null;
+let opened = false;
+
 slides.forEach((slide, index) => {
   const dot = document.createElement('span');
   dot.className = 'dot' + (index === 0 ? ' active' : '');
@@ -540,7 +564,7 @@ function showSlide(index) {
     dot.classList.toggle('active', i === currentSlide);
   });
 
-  resetAutoSlide();
+  if (opened) startAutoSlide();
 }
 
 function changeSlide(direction) {
@@ -551,21 +575,19 @@ function startAutoSlide() {
   clearInterval(autoSlide);
   autoSlide = setInterval(() => {
     changeSlide(1);
-  }, 6500);
-}
-
-function resetAutoSlide() {
-  if (invitationOpened) startAutoSlide();
+  }, 7000);
 }
 
 function openInvitation() {
-  invitationOpened = true;
+  opened = true;
   showSlide(1);
+
   music.play().then(() => {
     musicBtn.textContent = '♫';
   }).catch(() => {
     musicBtn.textContent = '♪';
   });
+
   startAutoSlide();
 }
 
@@ -574,7 +596,7 @@ function toggleMusic() {
     music.play().then(() => {
       musicBtn.textContent = '♫';
     }).catch(() => {
-      alert('Silakan coba tekan tombol musik sekali lagi.');
+      alert('Musik belum dapat diputar. Periksa file musik.');
     });
   } else {
     music.pause();
@@ -582,12 +604,12 @@ function toggleMusic() {
   }
 }
 
-// Countdown: GANTI tanggal di bawah sesuai hari pernikahan
+// COUNTDOWN
+// GANTI tanggal ini sesuai tanggal pernikahan.
 const weddingDate = new Date('2027-06-20T08:00:00+07:00').getTime();
 
 function updateCountdown() {
-  const now = Date.now();
-  const distance = weddingDate - now;
+  const distance = weddingDate - Date.now();
 
   if (distance <= 0) {
     ['days','hours','minutes','seconds'].forEach(id => {
@@ -600,21 +622,22 @@ function updateCountdown() {
     Math.floor(distance / 86400000);
 
   document.getElementById('hours').textContent =
-    Math.floor((distance % 86400000) / 3600000);
+    Math.floor(distance % 86400000 / 3600000);
 
   document.getElementById('minutes').textContent =
-    Math.floor((distance % 3600000) / 60000);
+    Math.floor(distance % 3600000 / 60000);
 
   document.getElementById('seconds').textContent =
-    Math.floor((distance % 60000) / 1000);
+    Math.floor(distance % 60000 / 1000);
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// RSVP melalui WhatsApp
+// RSVP WHATSAPP
 function sendRSVP() {
   const name = document.getElementById('guestName').value.trim();
+  const attendance = document.getElementById('attendance').value;
   const message = document.getElementById('guestMessage').value.trim();
 
   if (!name || !message) {
@@ -622,17 +645,19 @@ function sendRSVP() {
     return;
   }
 
-  const phone = '6281234567890'; // GANTI dengan nomor WhatsApp pemilik undangan
+  // GANTI dengan nomor WhatsApp pemilik undangan.
+  const phone = '6281234567890';
 
-  const text = `Assalamu'alaikum, saya ${name}.\n\n${message}\n\nTerima kasih.`;
+  const text =
+    `Assalamu'alaikum.\nNama: ${name}\nKonfirmasi: ${attendance}\nUcapan: ${message}`;
 
   window.open(
-    `https://wa.me/${phone}?text=${encodeURIComponent(text)}`,
+    'https://wa.me/' + phone + '?text=' + encodeURIComponent(text),
     '_blank'
   );
 }
 
-// Geser slide dengan sentuhan HP
+// SWIPE UNTUK HP
 let touchStart = 0;
 
 document.getElementById('slider').addEventListener('touchstart', e => {
@@ -640,12 +665,18 @@ document.getElementById('slider').addEventListener('touchstart', e => {
 }, {passive:true});
 
 document.getElementById('slider').addEventListener('touchend', e => {
-  const difference = e.changedTouches[0].screenX - touchStart;
+  const diff = e.changedTouches[0].screenX - touchStart;
 
-  if (Math.abs(difference) > 60) {
-    changeSlide(difference < 0 ? 1 : -1);
+  if (Math.abs(diff) > 60) {
+    changeSlide(diff < 0 ? 1 : -1);
   }
 }, {passive:true});
+
+// KEYBOARD NAVIGATION
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') changeSlide(1);
+  if (e.key === 'ArrowLeft') changeSlide(-1);
+});
 </script>
 
 </body>
